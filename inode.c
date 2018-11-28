@@ -328,7 +328,6 @@ static int opel_pre_allocate( struct inode *inode, unsigned int start, unsigned 
 	unsigned int *data;
 	unsigned int fat_block_pos = fat_block + start / OPEL_CLUSTER_IN_BLOCK;
 
-	//data채우기
 	data = ( unsigned int * )kmalloc( (end-start+1) * sizeof(unsigned int)  , GFP_KERNEL ); //하나에 4byte
 
 	for( cnt = cluster ; cnt <= (end+1) ; cnt++ )
