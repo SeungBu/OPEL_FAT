@@ -148,7 +148,7 @@ int opel_build_config_file( struct inode *dir, struct dentry *dentry, int mode )
 	int cluster = sbi->fat_start;
 
 	//First, Create empty file
-	memcpy( de.name, msdos_name, MSDOS_NAME ); //msdos_dir_entry의 name에 msdos_name배열 안에 이름을
+	memcpy( de.name, msdos_name, MSDOS_NAME );
 
 	de.attr = 0 ? ATTR_DIR : ATTR_ARCH;
 	de.lcase = 0;
@@ -158,7 +158,7 @@ int opel_build_config_file( struct inode *dir, struct dentry *dentry, int mode )
 	de.time = 0;
 	de.date = 0;
 	de.start = cpu_to_le16(cluster_num);
-	de.starthi = cpu_to_le16(cluster_num) >> 16;  //high 16bit니깐 이게 맞는거 같은데 원래 괄호안에 >> 16이 있었음
+	de.starthi = cpu_to_le16(cluster_num) >> 16; 
 	de.size = 512; //length of data
 
 	err = fat_add_entries( dir, &de, 1, _sinfo );
