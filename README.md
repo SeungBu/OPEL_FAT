@@ -1,4 +1,10 @@
 
 
-##임베디드 시스템을 위한 고성능 FAT 호환 파일시스템
+##FAT-compatible High-performance File System for Embedded System 
+
+if you want workload,
+  please send email  ( kimseungbu2@gmail.com )
+  
+  i will give you 
+             simple tutorial, detail imformation, command ...~~~
 
