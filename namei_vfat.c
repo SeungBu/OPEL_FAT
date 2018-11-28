@@ -1428,7 +1428,7 @@ static void opel_kill_block_super( struct super_block *sb )
 			g_sb_s2 = NULL;
 			strcpy( manager_control_sd2, "Not mounted" );
 		}
-	}
+	} 
 
 	kill_block_super( sb );
 }
