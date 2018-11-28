@@ -24,12 +24,12 @@
 #define OPEL_ORIGINAL_FAT_ON 1
 #define OPEL_PRE_ALLOC_ON 1
 
-#define OPEL_BLACKBOX_NORMAL	1  //normal 		//normal
-#define OPEL_BLACKBOX_EVENT	2  //normal_event 	//event
-#define OPEL_BLACKBOX_PARKING	3  //parking 		//parking
-#define OPEL_BLACKBOX_MANUAL	4  //parking_event  //manual
-#define OPEL_BLACKBOX_CONFIG	5  //handwork 		//config
-#define OPEL_BLACKBOX_ETC	0  //etc
+#define OPEL_BLACKBOX_NORMAL	1 
+#define OPEL_BLACKBOX_EVENT	2  
+#define OPEL_BLACKBOX_PARKING	3 
+#define OPEL_BLACKBOX_MANUAL	4 
+#define OPEL_BLACKBOX_CONFIG	5  
+#define OPEL_BLACKBOX_ETC	0 
 
 #define OPEL_NORMAL_DIRECTORY 		 "normal"
 #define OPEL_EVENT_DIRECTORY 		 "event"
@@ -38,7 +38,7 @@
 #define OPEL_CONFIG_DIRECTORY		 "config"
 #define OPEL_ETC_DIRECTORY 				 "etc"
 
-//          Physical Page information
+
 #define OPEL_SD_PAGE_SIZE 4
 
 #define OPEL_CLUSTER_IN_PAGE     (OPEL_SD_PAGE_SIZE*256)      //OPEL_SD_PAGE_SIZE * 256;   //(OPEL_SD_PAGE_SIZE * 1024 byte / 4 byte)
@@ -49,8 +49,7 @@
 #define opel_floor(x, y) (x)/(y)
 #define OPEL_FAT_ALLOC_CLUSTER   0
 
-//          Configuration Value
-// ETC가 배열에 사용되므로 확인 필요
+
 #define OPEL_CONFIG_NORMAL           0
 #define OPEL_CONFIG_EVENT         1
 #define OPEL_CONFIG_PARKING        2
@@ -115,14 +114,14 @@ struct PA_unit_t {
 	unsigned int start, end;
 	unsigned char flag;
 };
-
+//----
 struct PA{
 	struct PA_unit *pa_unit;
-	int pa_num; //PA개수
-	int pa_cluster_num; //한 PA가 갖는 클러스터 개수
-	int cur_pa_cnt; //몇번 째 PA가 할당 될 것인가
+	int pa_num; 
+	int pa_cluster_num; 
+	int cur_pa_cnt; 
 };
-
+//----
 /*
  * MS-DOS file system in-core superblock data
  */
