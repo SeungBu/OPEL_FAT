@@ -607,7 +607,7 @@ int fat_alloc_clusters(struct inode *inode, int *cluster, int nr_cluster)
 		/* Find the free entries in a block */
 		do {
 
-			if( sbi->fat_original_flag == OPEL_ORIGINAL_FAT_ON ) //기존 디폴트로 동작해라
+			if( sbi->fat_original_flag == OPEL_ORIGINAL_FAT_ON ) 
 			{
 				if (ops->ent_get(&fatent) == FAT_ENT_FREE )
 				{
@@ -641,7 +641,7 @@ int fat_alloc_clusters(struct inode *inode, int *cluster, int nr_cluster)
 					prev_ent = fatent;
 				}
 			}
-			else //OPEL로 동작
+			else 
 			{
 				if (ops->ent_get(&fatent) == FAT_ENT_FREE && sbi->opel_start_cluster[ area ] <= fatent.entry && sbi->opel_end_cluster[ area ] >= fatent.entry )
 				{
@@ -745,7 +745,7 @@ static int get_area_number_for_free_func( struct super_block *sb, int entry )
 	}
 }
 
-//파일을 삭제할 때, 할당된 클러스터를 해제한다.
+
 int fat_free_clusters(struct inode *inode, int cluster)
 {
 	struct super_block *sb = inode->i_sb;
@@ -919,8 +919,6 @@ void opel_get_area_number( int *area, struct inode *inode )
 			if( upper_dentry->d_name.name == NULL )
 				break;
 
-			//etc는 따로 디렉터리 설정으로 하지 않고 말그대로 기타로 하겟음 ( ex ) 현재 보드상엣 /media/boot 부분에 boot.ini랑 디바이스 파일이랑 , zImage올라가있는데
-			//이 쪽 파티션이 vfat로 되어 있어서 이런 역할로 etc를 나눠 주겟음
 			else if(strcmp(upper_dentry->d_name.name, OPEL_NORMAL_DIRECTORY ) == 0 )
 				temp_area = OPEL_BLACKBOX_NORMAL;
 
