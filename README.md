@@ -5,6 +5,6 @@
 If you want workload,
   please send email  ( kimseungbu2@gmail.com )
   
-  i will give you 
+  I will give you 
              simple tutorial, detail imformation, command ...~~~
 
